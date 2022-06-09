@@ -4,6 +4,6 @@
   },
   "scripts": {
 	  "dev": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
-	  "build": "rm -rf dist; mkdir dist; cp src/* dist/; rm dist/input.css; npx tailwindcss -i ./src/input.css -o ./dist/output.css"
+	  "build": "rm -rf dist; mkdir dist; cp src/* dist/; rm dist/input.css; npx tailwindcss -i ./src/input.css -o ./dist/output.css --minify"
   }
 }
