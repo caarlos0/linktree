@@ -1,9 +1,9 @@
 {
   "devDependencies": {
-    "tailwindcss": "^3.0.24"
+    "tailwindcss": "^4.0.14"
   },
   "scripts": {
-    "dev": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
-    "build": "rm -rf dist; mkdir dist; cp src/* dist/; rm dist/input.css; npx tailwindcss -i ./src/input.css -o ./dist/output.css --minify"
+    "dev": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/output.css --watch",
+    "build": "rm -rf dist; mkdir dist; cp src/* dist/; rm dist/input.css; npx @tailwindcss/cli -i ./src/input.css -o ./dist/output.css --minify"
   }
 }
