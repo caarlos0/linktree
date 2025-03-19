@@ -3,7 +3,8 @@
     "tailwindcss": "^4.0.14"
   },
   "scripts": {
+    "serve": "python3 -m http.server --bind 0 --directory ./dist 8000",
     "dev": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/output.css --watch",
-    "build": "rm -rf dist; mkdir dist; cp src/* dist/; rm dist/input.css; npx @tailwindcss/cli -i ./src/input.css -o ./dist/output.css --minify"
+    "build": "mkdir dist; rm -rf dist/*; cp src/* dist/; rm dist/input.css; npx @tailwindcss/cli -i ./src/input.css -o ./dist/output.css --minify"
   }
 }
