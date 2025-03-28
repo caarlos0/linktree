@@ -39,6 +39,30 @@
     <link href="output.css" rel="stylesheet" />
     <link rel="shortcut icon" type="image/png" href="/favicon.ico" />
     <title>caarlos0 | links</title>
+    <style>
+      #links li {
+        opacity: 0;
+        transform: translateY(10px);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+      }
+
+      #links li.fade-in {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+    <style>
+      #links li {
+        opacity: 0;
+        transform: translateY(10px);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+      }
+
+      #links li.fade-in {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
   </head>
   <body>
     <img class="avatar" src="/avatar.jpg" alt="caarlos0" />
@@ -174,5 +198,16 @@
         </li>
       </ul>
     </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const links = document.querySelectorAll('#links li');
+
+        links.forEach((link, index) => {
+          setTimeout(() => {
+            link.classList.add('fade-in');
+          }, 100 * index); // 100ms delay between each link
+        });
+      });
+    </script>
   </body>
 </html>
