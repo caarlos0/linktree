@@ -42,7 +42,8 @@
   </head>
   <body>
     <img class="avatar" src="/avatar.jpg" alt="caarlos0" />
-    <div class="title">caarlos0</div>
+    <div class="title">Carlos A. Becker</div>
+    <div class="subtitle">@caarlos0</div>
     <div id="links" role="navigation">
       <ul>
         <li>
@@ -188,5 +189,16 @@
         </li>
       </ul>
     </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const links = document.querySelectorAll('#links li');
+
+        links.forEach((link, index) => {
+          setTimeout(() => {
+            link.classList.add('fade-in');
+          }, 100 * index); // 100ms delay between each link
+        });
+      });
+    </script>
   </body>
 </html>
