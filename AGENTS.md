@@ -24,7 +24,7 @@ npm run serve
 src/
 ├── index.html      # Main HTML file with all links
 ├── input.css       # Tailwind CSS source with custom theme
-├── avatar.jpg      # Profile avatar image
+├── carlos.webp     # Profile avatar image
 ├── og-image.png    # Open Graph image for social sharing
 ├── favicon.ico     # Site favicon
 └── *.png/*.ico     # Social platform icons
@@ -50,10 +50,7 @@ dist/               # Build output (gitignored)
     target="_blank"
     rel="me"
   >
-    <img
-      src="platform-icon.png"
-      class="link-logo hover-invert"
-    />
+    <img src="platform-icon.png" class="link-logo hover-invert" />
     <span id="label">Platform Name</span>
   </a>
 </li>
