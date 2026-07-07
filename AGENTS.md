@@ -37,6 +37,14 @@ dist/               # Build output (gitignored)
 2. **Build process** copies all files from `src/` to `dist/`, removes `input.css`, and compiles Tailwind CSS to `dist/output.css`
 3. **Production output** is the `dist/` directory
 
+## Design
+
+The page is styled as a terminal session: an `ssh caarlos0.dev` boot sequence
+types itself out, prints an ASCII banner, a whoami block, and a `ls ~/links`
+listing, ending at a blinking prompt. A tmux-style status bar sits at the
+bottom. Links are keyboard-navigable (j/k or arrows to move, Enter to open,
+1–9 to jump) in addition to normal click/tap.
+
 ## Adding a New Link
 
 1. Add the platform icon to `src/` (PNG or ICO format)
@@ -44,25 +52,26 @@ dist/               # Build output (gitignored)
 
 ```html
 <li>
-  <a
-    class="link-container"
-    href="https://example.com/profile"
-    target="_blank"
-    rel="me"
-  >
-    <img src="platform-icon.png" class="link-logo hover-invert" />
-    <span id="label">Platform Name</span>
+  <a class="row" href="https://example.com/profile" target="_blank" rel="me">
+    <span class="row-idx">N</span>
+    <img src="platform-icon.png" class="row-icon" alt="" loading="lazy" />
+    <span class="row-name">platform</span>
+    <span class="row-url">example.com/profile</span>
+    <span class="row-key">↵</span>
   </a>
 </li>
 ```
 
+3. Keep `row-idx` numbers sequential — they double as the 1–9 keyboard
+   shortcuts (the `total N` count is set by JavaScript automatically)
+
 ## CSS Conventions
 
 - **Tailwind CSS v4** with `@apply` directives for component classes
-- **Custom theme** defined in `@theme` block in `input.css`
-- **Icon hover effects**: Use `hover-invert` for light icons on dark background, `hover-uninvert` for dark icons
-- **Responsive breakpoints**: `w-11/12` mobile, `xl:w-1/2`, `2xl:w-1/3`
-- **Animation**: Links fade in sequentially via JavaScript on page load
+- **Custom theme** (terminal palette + mono font stack) defined in the `@theme` block in `input.css`
+- **Icons**: grayscale/dim by default, full color on hover/selection. Add `row-icon-dark` for dark icons that need `invert()` on the dark background
+- **Selection**: the `sel` class (managed by JS) mirrors `:hover`/`:focus-visible` styling for keyboard navigation
+- **Reduced motion**: the boot animation and cursor blink are disabled via `prefers-reduced-motion`; any key press or click also skips the boot sequence
 
 ## HTML Patterns
 
@@ -70,6 +79,7 @@ dist/               # Build output (gitignored)
 - External favicons can be referenced directly (e.g., `https://carlosbecker.com/favicon.ico`)
 - Local icons use relative paths (e.g., `github.png` or `/github.png`)
 - Comments use HTML comment syntax to temporarily disable links
+- Link names are lowercase (terminal aesthetic); the visible `row-url` text is a display string and may differ from the actual `href`
 
 ## Gotchas
 
