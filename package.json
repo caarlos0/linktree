@@ -1,10 +1,13 @@
 {
   "devDependencies": {
+    "@tailwindcss/cli": "4.1",
+    "concurrently": "9",
+    "serve": "14",
     "tailwindcss": "4.1"
   },
   "scripts": {
-    "serve": "python3 -m http.server --bind 0 --directory ./dist 8000",
-    "dev": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/output.css --watch",
-    "build": "mkdir dist; rm -rf dist/*; cp src/* dist/; rm dist/input.css; npx @tailwindcss/cli -i ./src/input.css -o ./dist/output.css --minify"
+    "serve": "serve ./dist -l 8000",
+    "dev": "pnpm build && concurrently -k -n css,serve \"tailwindcss -i ./src/input.css -o ./dist/output.css --watch\" \"serve ./dist -l 8000\"",
+    "build": "mkdir dist; rm -rf dist/*; cp src/* dist/; rm dist/input.css; tailwindcss -i ./src/input.css -o ./dist/output.css --minify"
   }
 }

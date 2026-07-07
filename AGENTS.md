@@ -6,16 +6,16 @@ This is a personal linktree-style static website built with plain HTML and Tailw
 
 ```bash
 # Install dependencies
-npm install
+pnpm install
 
-# Development - watch mode for CSS changes
-npm run dev
+# Development - build, watch CSS, and serve on http://localhost:8000
+pnpm dev
 
 # Build for production (outputs to dist/)
-npm run build
+pnpm build
 
-# Serve the built site locally (requires Python 3)
-npm run serve
+# Serve the built site locally on http://localhost:8000
+pnpm serve
 ```
 
 ## Project Structure
@@ -39,39 +39,43 @@ dist/               # Build output (gitignored)
 
 ## Design
 
-The page is styled as a terminal session: an `ssh caarlos0.dev` boot sequence
-types itself out, prints an ASCII banner, a whoami block, and a `ls ~/links`
-listing, ending at a blinking prompt. A tmux-style status bar sits at the
-bottom. Links are keyboard-navigable (j/k or arrows to move, Enter to open,
-1–9 to jump) in addition to normal click/tap.
+The page is a modern take on a 2004 MySpace profile ("caarlos0space"): a fake
+site nav bar, a scrolling marquee, an animated rainbow WordArt title, ridge-
+bordered panels over a twinkling star background, a profile card with
+mood/online status and a hit counter, a fake "profile song" player with an
+animated equalizer, an "about me" blurb, and the links as a "Top 9" grid of
+tilted neon sticker cards. A sparkle trail follows the cursor (desktop only).
+Everything is CSS/vanilla JS — no extra images, fonts, or audio.
 
 ## Adding a New Link
 
 1. Add the platform icon to `src/` (PNG or ICO format)
-2. Add a new `<li>` entry in `src/index.html` following the existing pattern:
+2. Add a new `<li>` entry to the `.top9` list in `src/index.html`:
 
 ```html
-<li>
-  <a class="row" href="https://example.com/profile" target="_blank" rel="me">
-    <span class="row-idx">N</span>
-    <img src="platform-icon.png" class="row-icon" alt="" loading="lazy" />
-    <span class="row-name">platform</span>
-    <span class="row-url">example.com/profile</span>
-    <span class="row-key">↵</span>
+<li style="--tilt: -2deg">
+  <a class="card" href="https://example.com/profile" target="_blank" rel="me">
+    <span class="card-rank">#N</span>
+    <img src="platform-icon.png" class="card-icon" alt="" loading="lazy" />
+    <span class="card-name">platform</span>
   </a>
 </li>
 ```
 
-3. Keep `row-idx` numbers sequential — they double as the 1–9 keyboard
-   shortcuts (the `total N` count is set by JavaScript automatically)
+3. Pick a `--tilt` between -2.5deg and 2.5deg (vary it from the neighbors so
+   the grid looks hand-placed) and keep `card-rank` numbers sequential
 
 ## CSS Conventions
 
 - **Tailwind CSS v4** with `@apply` directives for component classes
-- **Custom theme** (terminal palette + mono font stack) defined in the `@theme` block in `input.css`
-- **Icons**: grayscale/dim by default, full color on hover/selection. Add `row-icon-dark` for dark icons that need `invert()` on the dark background
-- **Selection**: the `sel` class (managed by JS) mirrors `:hover`/`:focus-visible` styling for keyboard navigation
-- **Reduced motion**: the boot animation and cursor blink are disabled via `prefers-reduced-motion`; any key press or click also skips the boot sequence
+- **Custom theme** (Y2K neon palette: pink/cyan/purple/lime + Verdana body,
+  Comic Sans accents) defined in the `@theme` block in `input.css`
+- **Icons**: add the `inv` class to dark icons that need `invert()` to be
+  visible on the dark card background (e.g. github, x, steam)
+- **Panels**: `.panel` + `.panel-title` + `.panel-body` is the building block
+  for any new box
+- **Reduced motion**: all animations (marquee, rainbow title, equalizer,
+  blinking, background, sparkle trail) are disabled via `prefers-reduced-motion`
 
 ## HTML Patterns
 
@@ -79,10 +83,13 @@ bottom. Links are keyboard-navigable (j/k or arrows to move, Enter to open,
 - External favicons can be referenced directly (e.g., `https://carlosbecker.com/favicon.ico`)
 - Local icons use relative paths (e.g., `github.png` or `/github.png`)
 - Comments use HTML comment syntax to temporarily disable links
-- Link names are lowercase (terminal aesthetic); the visible `row-url` text is a display string and may differ from the actual `href`
+- Link names are lowercase; the deliberate typos/leetspeak in marquee and
+  status text are part of the aesthetic — don't "fix" them
+- The hit counter is a joke: a fixed base number plus a real per-browser visit
+  count from localStorage
 
 ## Gotchas
 
-- **No hot reload for HTML**: The `dev` script only watches CSS changes. Refresh browser manually for HTML changes.
-- **dist/ is gitignored**: Build output is not committed; run `npm run build` before deploying
-- **Python 3 required** for the local server (`npm run serve`)
+- **No hot reload for HTML**: `dev` only watches CSS. HTML/icon edits need a `dev` restart (or `pnpm build`) to re-copy them into `dist/`; refresh the browser manually.
+- **dist/ is gitignored**: Build output is not committed; run `pnpm build` before deploying
+- **Local server uses `serve`**: `pnpm dev` (build + CSS watch + serve) and `pnpm serve` (serve only) both serve `dist/` on http://localhost:8000 via the Node `serve` package — no Python needed

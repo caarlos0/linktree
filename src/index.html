@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#060907" />
+    <meta name="theme-color" content="#0b0016" />
 
     <meta property="og:title" content="caarlos0 | links" />
     <meta name="twitter:title" content="caarlos0 | links" />
@@ -49,31 +49,34 @@
     <title>caarlos0 | links</title>
   </head>
   <body>
-    <main class="terminal">
-      <div class="titlebar">
-        <span class="dot dot-red"></span>
-        <span class="dot dot-yellow"></span>
-        <span class="dot dot-green"></span>
-        <span class="titlebar-text">ssh caarlos0.dev — 80×24</span>
+    <header class="topnav">
+      <span class="topnav-logo">caarlos0space</span>
+      <span class="topnav-tag">a place for links™</span>
+      <span class="topnav-links">Home | Browse | Search | <b>SignOut</b></span>
+    </header>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-inner">
+        <span>
+          ★·.·´¯`·.·★ wElCoMe 2 caarlos0's pAgE ★·.·´¯`·.·★ thx 4 stopping
+          by!! ✨ pls click my top 9 💿 no autoplay music i promise 🎧 best
+          viewed at 800×600 🖥️ xoxo 💖&nbsp;
+        </span>
+        <span>
+          ★·.·´¯`·.·★ wElCoMe 2 caarlos0's pAgE ★·.·´¯`·.·★ thx 4 stopping
+          by!! ✨ pls click my top 9 💿 no autoplay music i promise 🎧 best
+          viewed at 800×600 🖥️ xoxo 💖&nbsp;
+        </span>
       </div>
+    </div>
 
-      <div class="screen">
-        <div class="line">
-          <span class="p-user p-dim">guest@web</span><span class="p-dim">:</span><span class="p-path">~</span><span class="p-dim">$</span>
-          <span id="cmd1" data-type>ssh caarlos0.dev</span>
-        </div>
+    <h1 class="wordart"><span aria-hidden="true">✨</span> caarlos0 <span aria-hidden="true">✨</span></h1>
 
-        <div id="out1">
-          <div class="line dim">Connected to caarlos0.dev.</div>
-          <div class="line dim">Last login: just now, from your browser.</div>
-
-          <pre class="banner" aria-hidden="true">
-                    __         ___
- _______ ____ _____/ /__  ___ / _ \
-/ __/ _ `/ _ `/ __/ / _ \(_-&lt;/ // /
-\__/\_,_/\_,_/_/ /_/\___/___/\___/</pre>
-
-          <div class="whoami">
+    <main class="cols">
+      <aside class="col-left">
+        <section class="panel">
+          <h2 class="panel-title">Carlos A. Becker</h2>
+          <div class="panel-body profile">
             <img
               class="avatar"
               src="/carlos.webp"
@@ -82,329 +85,268 @@
               decoding="async"
               fetchpriority="high"
             />
-            <div>
-              <div class="who-name">Carlos A. Becker</div>
-              <div class="who-handle">@caarlos0</div>
-            </div>
+            <table class="stats">
+              <tr>
+                <td>Status:</td>
+                <td><span class="online-dot"></span> oNliNe nOw!</td>
+              </tr>
+              <tr>
+                <td>Mood:</td>
+                <td>shipping 🚀</td>
+              </tr>
+              <tr>
+                <td>Last Login:</td>
+                <td>just now</td>
+              </tr>
+              <tr>
+                <td>Views:</td>
+                <td><span class="counter" id="counter">1337042</span></td>
+              </tr>
+            </table>
           </div>
-        </div>
+        </section>
 
-        <div class="line" id="l-cmd2">
-          <span class="p-user">carlos@caarlos0.dev</span><span class="p-dim">:</span><span class="p-path">~</span><span class="p-dim">$</span>
-          <span id="cmd2" data-type>ls ~/links</span>
-        </div>
+        <section class="panel">
+          <h2 class="panel-title">profile song 🎵</h2>
+          <div class="panel-body player">
+            <div class="eq" aria-hidden="true">
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <div class="player-track">
+              <b>now playing:</b> darude&nbsp;-&nbsp;sandstorm.mp3
+            </div>
+            <div class="player-note">(muted 4ever, ur welcome)</div>
+          </div>
+        </section>
 
-        <nav id="links" aria-label="links">
-          <div class="line dim">total <span id="link-count">9</span></div>
-          <ul>
-            <li>
-              <a class="row" href="https://carlosbecker.com" target="_blank">
-                <span class="row-idx">1</span>
-                <img
-                  src="https://carlosbecker.com/favicon.ico"
-                  class="row-icon"
-                  alt=""
-                  loading="lazy"
-                />
-                <span class="row-name">website</span>
-                <span class="row-url">carlosbecker.com</span>
-                <span class="row-key">↵</span>
-              </a>
-            </li>
-            <li>
-              <a
-                class="row"
-                href="https://github.com/caarlos0"
-                target="_blank"
-                rel="me"
-              >
-                <span class="row-idx">2</span>
-                <img
-                  src="/github.png"
-                  class="row-icon row-icon-dark"
-                  alt=""
-                  loading="lazy"
-                />
-                <span class="row-name">github</span>
-                <span class="row-url">github.com/caarlos0</span>
-                <span class="row-key">↵</span>
-              </a>
-            </li>
-            <li>
-              <a
-                class="row"
-                href="https://twitter.com/caarlos0"
-                target="_blank"
-                rel="me"
-              >
-                <span class="row-idx">3</span>
-                <img
-                  src="x.png"
-                  class="row-icon row-icon-dark"
-                  alt=""
-                  loading="lazy"
-                />
-                <span class="row-name">x</span>
-                <span class="row-url">x.com/caarlos0</span>
-                <span class="row-key">↵</span>
-              </a>
-            </li>
-            <li>
-              <a
-                class="row"
-                href="https://mastodon.social/@caarlos0"
-                target="_blank"
-                rel="me"
-              >
-                <span class="row-idx">4</span>
-                <img
-                  src="mastodon.png"
-                  class="row-icon"
-                  alt=""
-                  loading="lazy"
-                />
-                <span class="row-name">mastodon</span>
-                <span class="row-url">mastodon.social/@caarlos0</span>
-                <span class="row-key">↵</span>
-              </a>
-            </li>
-            <li>
-              <a
-                class="row"
-                href="https://twitch.com/caarlos0"
-                target="_blank"
-                rel="me"
-              >
-                <span class="row-idx">5</span>
-                <img src="twitch.png" class="row-icon" alt="" loading="lazy" />
-                <span class="row-name">twitch</span>
-                <span class="row-url">twitch.tv/caarlos0</span>
-                <span class="row-key">↵</span>
-              </a>
-            </li>
-            <li>
-              <a
-                class="row"
-                href="https://www.linkedin.com/in/caarlos0/"
-                target="_blank"
-                rel="me"
-              >
-                <span class="row-idx">6</span>
-                <img
-                  src="linkedin.png"
-                  class="row-icon"
-                  alt=""
-                  loading="lazy"
-                />
-                <span class="row-name">linkedin</span>
-                <span class="row-url">linkedin.com/in/caarlos0</span>
-                <span class="row-key">↵</span>
-              </a>
-            </li>
-            <li>
-              <a
-                class="row"
-                href="https://www.goodreads.com/user/show/51005066-carlos-becker"
-                target="_blank"
-                rel="me"
-              >
-                <span class="row-idx">7</span>
-                <img
-                  src="goodreads.ico"
-                  class="row-icon"
-                  alt=""
-                  loading="lazy"
-                />
-                <span class="row-name">goodreads</span>
-                <span class="row-url">goodreads.com/carlos-becker</span>
-                <span class="row-key">↵</span>
-              </a>
-            </li>
-            <!-- <li>
-              <a
-                class="row"
-                href="https://literal.club/caarlos0"
-                target="_blank"
-                rel="me"
-              >
-                <span class="row-idx">·</span>
-                <img
-                  src="literal.ico"
-                  class="row-icon"
-                  alt=""
-                  loading="lazy"
-                />
-                <span class="row-name">literal</span>
-                <span class="row-url">literal.club/caarlos0</span>
-                <span class="row-key">↵</span>
-              </a>
-            </li> -->
-            <li>
-              <a
-                class="row"
-                href="https://bsky.app/profile/caarlos0.dev"
-                target="_blank"
-                rel="me"
-              >
-                <span class="row-idx">8</span>
-                <img src="bsky.png" class="row-icon" alt="" loading="lazy" />
-                <span class="row-name">bluesky</span>
-                <span class="row-url">bsky.app/caarlos0.dev</span>
-                <span class="row-key">↵</span>
-              </a>
-            </li>
-            <li>
-              <a
-                class="row"
-                href="https://steamcommunity.com/id/caarlos0/"
-                target="_blank"
-                rel="me"
-              >
-                <span class="row-idx">9</span>
-                <img
-                  src="steam.png"
-                  class="row-icon row-icon-dark"
-                  alt=""
-                  loading="lazy"
-                />
-                <span class="row-name">steam</span>
-                <span class="row-url">steamcommunity.com/id/caarlos0</span>
-                <span class="row-key">↵</span>
-              </a>
-            </li>
-          </ul>
-        </nav>
+        <section class="panel">
+          <h2 class="panel-title">about me:</h2>
+          <div class="panel-body about">
+            <p>
+              heyyy!! welcome 2 my corner of the internet 💖 i write open
+              source stuff &amp; spend way 2 much time in the terminal.
+            </p>
+            <p class="about-meet">
+              <b>who i'd like to meet:</b> people who read release notes 🥺
+            </p>
+          </div>
+        </section>
+      </aside>
 
-        <div class="line" id="l-prompt">
-          <span class="p-user">carlos@caarlos0.dev</span><span class="p-dim">:</span><span class="p-path">~</span><span class="p-dim">$</span>
-          <span class="cursor" aria-hidden="true"></span>
-        </div>
-      </div>
-
-      <div class="statusbar">
-        <span>[0] caarlos0.dev</span>
-        <span class="statusbar-keys">j/k move · ↵ open · 1–9 jump</span>
-      </div>
+      <section class="col-right">
+        <section class="panel">
+          <h2 class="panel-title">
+            caarlos0's Top 9 <span class="blink">NEW!</span>
+          </h2>
+          <nav class="panel-body" aria-label="links">
+            <ul class="top9">
+              <li style="--tilt: -2deg">
+                <a class="card" href="https://carlosbecker.com" target="_blank">
+                  <span class="card-rank">#1</span>
+                  <img
+                    src="https://carlosbecker.com/favicon.ico"
+                    class="card-icon"
+                    alt=""
+                    loading="lazy"
+                  />
+                  <span class="card-name">website</span>
+                </a>
+              </li>
+              <li style="--tilt: 1.5deg">
+                <a
+                  class="card"
+                  href="https://github.com/caarlos0"
+                  target="_blank"
+                  rel="me"
+                >
+                  <span class="card-rank">#2</span>
+                  <img
+                    src="/github.png"
+                    class="card-icon inv"
+                    alt=""
+                    loading="lazy"
+                  />
+                  <span class="card-name">github</span>
+                </a>
+              </li>
+              <li style="--tilt: -1deg">
+                <a
+                  class="card"
+                  href="https://twitter.com/caarlos0"
+                  target="_blank"
+                  rel="me"
+                >
+                  <span class="card-rank">#3</span>
+                  <img
+                    src="x.png"
+                    class="card-icon inv"
+                    alt=""
+                    loading="lazy"
+                  />
+                  <span class="card-name">x</span>
+                </a>
+              </li>
+              <li style="--tilt: 2deg">
+                <a
+                  class="card"
+                  href="https://mastodon.social/@caarlos0"
+                  target="_blank"
+                  rel="me"
+                >
+                  <span class="card-rank">#4</span>
+                  <img
+                    src="mastodon.png"
+                    class="card-icon"
+                    alt=""
+                    loading="lazy"
+                  />
+                  <span class="card-name">mastodon</span>
+                </a>
+              </li>
+              <li style="--tilt: -2.5deg">
+                <a
+                  class="card"
+                  href="https://twitch.com/caarlos0"
+                  target="_blank"
+                  rel="me"
+                >
+                  <span class="card-rank">#5</span>
+                  <img
+                    src="twitch.png"
+                    class="card-icon"
+                    alt=""
+                    loading="lazy"
+                  />
+                  <span class="card-name">twitch</span>
+                </a>
+              </li>
+              <li style="--tilt: 1deg">
+                <a
+                  class="card"
+                  href="https://www.linkedin.com/in/caarlos0/"
+                  target="_blank"
+                  rel="me"
+                >
+                  <span class="card-rank">#6</span>
+                  <img
+                    src="linkedin.png"
+                    class="card-icon"
+                    alt=""
+                    loading="lazy"
+                  />
+                  <span class="card-name">linkedin</span>
+                </a>
+              </li>
+              <li style="--tilt: 2.5deg">
+                <a
+                  class="card"
+                  href="https://www.goodreads.com/user/show/51005066-carlos-becker"
+                  target="_blank"
+                  rel="me"
+                >
+                  <span class="card-rank">#7</span>
+                  <img
+                    src="goodreads.ico"
+                    class="card-icon"
+                    alt=""
+                    loading="lazy"
+                  />
+                  <span class="card-name">goodreads</span>
+                </a>
+              </li>
+              <!-- <li style="--tilt: -1deg">
+                <a
+                  class="card"
+                  href="https://literal.club/caarlos0"
+                  target="_blank"
+                  rel="me"
+                >
+                  <span class="card-rank">#·</span>
+                  <img
+                    src="literal.ico"
+                    class="card-icon"
+                    alt=""
+                    loading="lazy"
+                  />
+                  <span class="card-name">literal</span>
+                </a>
+              </li> -->
+              <li style="--tilt: -1.5deg">
+                <a
+                  class="card"
+                  href="https://bsky.app/profile/caarlos0.dev"
+                  target="_blank"
+                  rel="me"
+                >
+                  <span class="card-rank">#8</span>
+                  <img src="bsky.png" class="card-icon" alt="" loading="lazy" />
+                  <span class="card-name">bluesky</span>
+                </a>
+              </li>
+              <li style="--tilt: 2deg">
+                <a
+                  class="card"
+                  href="https://steamcommunity.com/id/caarlos0/"
+                  target="_blank"
+                  rel="me"
+                >
+                  <span class="card-rank">#9</span>
+                  <img
+                    src="steam.png"
+                    class="card-icon inv"
+                    alt=""
+                    loading="lazy"
+                  />
+                  <span class="card-name">steam</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </section>
+      </section>
     </main>
+
+    <footer class="footer">
+      <div class="construction" aria-hidden="true"></div>
+      <p>
+        🚧 under construction since 2004 🚧 · © caarlos0space™ · made w/ 💖
+        &amp; way 2 much css
+      </p>
+    </footer>
 
     <script>
       (function () {
-        var rows = Array.prototype.slice.call(
-          document.querySelectorAll("#links a")
-        );
-        document.getElementById("link-count").textContent = rows.length;
+        // hit counter: fake base + a real visit count in localStorage
+        try {
+          var n = (parseInt(localStorage.getItem("hits") || "0", 10) || 0) + 1;
+          localStorage.setItem("hits", String(n));
+          document.getElementById("counter").textContent = String(
+            1337041 + n
+          ).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        } catch (e) {}
 
-        // keyboard navigation, fzf-style
-        var sel = -1;
-        function select(i) {
-          if (!rows.length) return;
-          sel = ((i % rows.length) + rows.length) % rows.length;
-          rows.forEach(function (r, j) {
-            r.classList.toggle("sel", j === sel);
-          });
-          rows[sel].scrollIntoView({ block: "nearest" });
-        }
-        var booting = false;
-        document.addEventListener("keydown", function (e) {
-          if (booting || e.metaKey || e.ctrlKey || e.altKey) return;
-          if (e.key === "j" || e.key === "ArrowDown") {
-            e.preventDefault();
-            select(sel + 1);
-          } else if (e.key === "k" || e.key === "ArrowUp") {
-            e.preventDefault();
-            select(sel - 1);
-          } else if (e.key === "Enter" && sel >= 0) {
-            rows[sel].click();
-          } else if (/^[1-9]$/.test(e.key) && +e.key <= rows.length) {
-            rows[+e.key - 1].click();
-          }
-        });
-        rows.forEach(function (r, i) {
-          r.addEventListener("mouseenter", function () {
-            select(i);
-          });
-          r.addEventListener("focus", function () {
-            select(i);
-          });
-        });
-
-        // boot sequence: type commands, then print output
-        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches)
+        // sparkle cursor trail
+        if (
+          window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+          window.matchMedia("(hover: none)").matches
+        )
           return;
-
-        var typed = Array.prototype.slice.call(
-          document.querySelectorAll("[data-type]")
-        );
-        var texts = typed.map(function (t) {
-          return t.textContent;
-        });
-        var hidden = [document.getElementById("out1")]
-          .concat(rows.map(function (r) {
-            return r.parentElement;
-          }))
-          .concat([
-            document.getElementById("l-cmd2"),
-            document.querySelector("#links .line"),
-            document.getElementById("l-prompt"),
-          ]);
-
-        typed.forEach(function (t) {
-          t.textContent = "";
-        });
-        hidden.forEach(function (el) {
-          el.style.visibility = "hidden";
-        });
-        booting = true;
-
-        function skip() {
-          booting = false;
-          typed.forEach(function (t, i) {
-            t.textContent = texts[i];
+        var emoji = ["✨", "⭐", "💖", "🌟", "💫"];
+        var last = 0;
+        document.addEventListener("mousemove", function (e) {
+          var now = Date.now();
+          if (now - last < 50) return;
+          last = now;
+          var s = document.createElement("span");
+          s.className = "spark";
+          s.textContent = emoji[(Math.random() * emoji.length) | 0];
+          s.style.left = e.clientX + "px";
+          s.style.top = e.clientY + "px";
+          document.body.appendChild(s);
+          s.addEventListener("animationend", function () {
+            s.remove();
           });
-          hidden.forEach(function (el) {
-            el.style.visibility = "";
-          });
-        }
-        document.addEventListener("keydown", skip, { once: true });
-        document.addEventListener("pointerdown", skip, { once: true });
-
-        function wait(ms) {
-          return new Promise(function (r) {
-            setTimeout(r, ms);
-          });
-        }
-        function show(el) {
-          el.style.visibility = "";
-        }
-        async function type(el, text, speed) {
-          for (var i = 0; i < text.length; i++) {
-            if (!booting) return;
-            el.textContent += text[i];
-            await wait(speed);
-          }
-        }
-        (async function () {
-          await wait(400);
-          await type(typed[0], texts[0], 60);
-          if (!booting) return;
-          await wait(250);
-          show(document.getElementById("out1"));
-          await wait(500);
-          show(document.getElementById("l-cmd2"));
-          await type(typed[1], texts[1], 45);
-          if (!booting) return;
-          await wait(200);
-          show(document.querySelector("#links .line"));
-          for (var i = 0; i < rows.length; i++) {
-            await wait(55);
-            if (!booting) return;
-            show(rows[i].parentElement);
-          }
-          await wait(150);
-          if (!booting) return;
-          show(document.getElementById("l-prompt"));
-          booting = false;
-        })();
+        });
       })();
     </script>
   </body>
