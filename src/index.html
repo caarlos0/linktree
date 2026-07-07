@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#0b0016" />
+    <meta name="theme-color" content="#030303" />
 
     <meta property="og:title" content="caarlos0 | links" />
     <meta name="twitter:title" content="caarlos0 | links" />
@@ -49,305 +49,148 @@
     <title>caarlos0 | links</title>
   </head>
   <body>
-    <header class="topnav">
-      <span class="topnav-logo">caarlos0space</span>
-      <span class="topnav-tag">a place for links™</span>
-      <span class="topnav-links">Home | Browse | Search | <b>SignOut</b></span>
-    </header>
+    <main class="wrap">
+      <header class="profile">
+        <img
+          class="avatar"
+          src="/carlos.webp"
+          alt="caarlos0"
+          loading="eager"
+          decoding="async"
+          fetchpriority="high"
+        />
+        <h1 class="name">Carlos A. Becker</h1>
+        <p class="handle">@caarlos0</p>
+      </header>
 
-    <div class="marquee" aria-hidden="true">
-      <div class="marquee-inner">
-        <span>
-          ★·.·´¯`·.·★ wElCoMe 2 caarlos0's pAgE ★·.·´¯`·.·★ thx 4 stopping
-          by!! ✨ pls click my top 9 💿 no autoplay music i promise 🎧 best
-          viewed at 800×600 🖥️ xoxo 💖&nbsp;
-        </span>
-        <span>
-          ★·.·´¯`·.·★ wElCoMe 2 caarlos0's pAgE ★·.·´¯`·.·★ thx 4 stopping
-          by!! ✨ pls click my top 9 💿 no autoplay music i promise 🎧 best
-          viewed at 800×600 🖥️ xoxo 💖&nbsp;
-        </span>
-      </div>
-    </div>
-
-    <h1 class="wordart"><span aria-hidden="true">✨</span> caarlos0 <span aria-hidden="true">✨</span></h1>
-
-    <main class="cols">
-      <aside class="col-left">
-        <section class="panel">
-          <h2 class="panel-title">Carlos A. Becker</h2>
-          <div class="panel-body profile">
-            <img
-              class="avatar"
-              src="/carlos.webp"
-              alt="caarlos0"
-              loading="eager"
-              decoding="async"
-              fetchpriority="high"
-            />
-            <table class="stats">
-              <tr>
-                <td>Status:</td>
-                <td><span class="online-dot"></span> oNliNe nOw!</td>
-              </tr>
-              <tr>
-                <td>Mood:</td>
-                <td>shipping 🚀</td>
-              </tr>
-              <tr>
-                <td>Last Login:</td>
-                <td>just now</td>
-              </tr>
-              <tr>
-                <td>Views:</td>
-                <td><span class="counter" id="counter">1337042</span></td>
-              </tr>
-            </table>
-          </div>
-        </section>
-
-        <section class="panel">
-          <h2 class="panel-title">profile song 🎵</h2>
-          <div class="panel-body player">
-            <div class="eq" aria-hidden="true">
-              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-            </div>
-            <div class="player-track">
-              <b>now playing:</b> darude&nbsp;-&nbsp;sandstorm.mp3
-            </div>
-            <div class="player-note">(muted 4ever, ur welcome)</div>
-          </div>
-        </section>
-
-        <section class="panel">
-          <h2 class="panel-title">about me:</h2>
-          <div class="panel-body about">
-            <p>
-              heyyy!! welcome 2 my corner of the internet 💖 i write open
-              source stuff &amp; spend way 2 much time in the terminal.
-            </p>
-            <p class="about-meet">
-              <b>who i'd like to meet:</b> people who read release notes 🥺
-            </p>
-          </div>
-        </section>
-      </aside>
-
-      <section class="col-right">
-        <section class="panel">
-          <h2 class="panel-title">
-            caarlos0's Top 9 <span class="blink">NEW!</span>
-          </h2>
-          <nav class="panel-body" aria-label="links">
-            <ul class="top9">
-              <li style="--tilt: -2deg">
-                <a class="card" href="https://carlosbecker.com" target="_blank">
-                  <span class="card-rank">#1</span>
-                  <img
-                    src="https://carlosbecker.com/favicon.ico"
-                    class="card-icon"
-                    alt=""
-                    loading="lazy"
-                  />
-                  <span class="card-name">website</span>
-                </a>
-              </li>
-              <li style="--tilt: 1.5deg">
-                <a
-                  class="card"
-                  href="https://github.com/caarlos0"
-                  target="_blank"
-                  rel="me"
-                >
-                  <span class="card-rank">#2</span>
-                  <img
-                    src="/github.png"
-                    class="card-icon inv"
-                    alt=""
-                    loading="lazy"
-                  />
-                  <span class="card-name">github</span>
-                </a>
-              </li>
-              <li style="--tilt: -1deg">
-                <a
-                  class="card"
-                  href="https://twitter.com/caarlos0"
-                  target="_blank"
-                  rel="me"
-                >
-                  <span class="card-rank">#3</span>
-                  <img
-                    src="x.png"
-                    class="card-icon inv"
-                    alt=""
-                    loading="lazy"
-                  />
-                  <span class="card-name">x</span>
-                </a>
-              </li>
-              <li style="--tilt: 2deg">
-                <a
-                  class="card"
-                  href="https://mastodon.social/@caarlos0"
-                  target="_blank"
-                  rel="me"
-                >
-                  <span class="card-rank">#4</span>
-                  <img
-                    src="mastodon.png"
-                    class="card-icon"
-                    alt=""
-                    loading="lazy"
-                  />
-                  <span class="card-name">mastodon</span>
-                </a>
-              </li>
-              <li style="--tilt: -2.5deg">
-                <a
-                  class="card"
-                  href="https://twitch.com/caarlos0"
-                  target="_blank"
-                  rel="me"
-                >
-                  <span class="card-rank">#5</span>
-                  <img
-                    src="twitch.png"
-                    class="card-icon"
-                    alt=""
-                    loading="lazy"
-                  />
-                  <span class="card-name">twitch</span>
-                </a>
-              </li>
-              <li style="--tilt: 1deg">
-                <a
-                  class="card"
-                  href="https://www.linkedin.com/in/caarlos0/"
-                  target="_blank"
-                  rel="me"
-                >
-                  <span class="card-rank">#6</span>
-                  <img
-                    src="linkedin.png"
-                    class="card-icon"
-                    alt=""
-                    loading="lazy"
-                  />
-                  <span class="card-name">linkedin</span>
-                </a>
-              </li>
-              <li style="--tilt: 2.5deg">
-                <a
-                  class="card"
-                  href="https://www.goodreads.com/user/show/51005066-carlos-becker"
-                  target="_blank"
-                  rel="me"
-                >
-                  <span class="card-rank">#7</span>
-                  <img
-                    src="goodreads.ico"
-                    class="card-icon"
-                    alt=""
-                    loading="lazy"
-                  />
-                  <span class="card-name">goodreads</span>
-                </a>
-              </li>
-              <!-- <li style="--tilt: -1deg">
-                <a
-                  class="card"
-                  href="https://literal.club/caarlos0"
-                  target="_blank"
-                  rel="me"
-                >
-                  <span class="card-rank">#·</span>
-                  <img
-                    src="literal.ico"
-                    class="card-icon"
-                    alt=""
-                    loading="lazy"
-                  />
-                  <span class="card-name">literal</span>
-                </a>
-              </li> -->
-              <li style="--tilt: -1.5deg">
-                <a
-                  class="card"
-                  href="https://bsky.app/profile/caarlos0.dev"
-                  target="_blank"
-                  rel="me"
-                >
-                  <span class="card-rank">#8</span>
-                  <img src="bsky.png" class="card-icon" alt="" loading="lazy" />
-                  <span class="card-name">bluesky</span>
-                </a>
-              </li>
-              <li style="--tilt: 2deg">
-                <a
-                  class="card"
-                  href="https://steamcommunity.com/id/caarlos0/"
-                  target="_blank"
-                  rel="me"
-                >
-                  <span class="card-rank">#9</span>
-                  <img
-                    src="steam.png"
-                    class="card-icon inv"
-                    alt=""
-                    loading="lazy"
-                  />
-                  <span class="card-name">steam</span>
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </section>
-      </section>
+      <nav aria-label="links">
+        <ul class="grid">
+          <li>
+            <a class="card" href="https://carlosbecker.com" target="_blank">
+              <img
+                src="https://carlosbecker.com/favicon.ico"
+                class="card-icon"
+                alt=""
+                loading="lazy"
+              />
+              <span class="card-name">website</span>
+            </a>
+          </li>
+          <li>
+            <a
+              class="card"
+              href="https://github.com/caarlos0"
+              target="_blank"
+              rel="me"
+            >
+              <img
+                src="/github.png"
+                class="card-icon inv"
+                alt=""
+                loading="lazy"
+              />
+              <span class="card-name">github</span>
+            </a>
+          </li>
+          <li>
+            <a class="card" href="https://goreleaser.com" target="_blank">
+              <img
+                src="goreleaser.ico"
+                class="card-icon"
+                alt=""
+                loading="lazy"
+              />
+              <span class="card-name">goreleaser</span>
+            </a>
+          </li>
+          <li>
+            <a
+              class="card"
+              href="https://twitter.com/caarlos0"
+              target="_blank"
+              rel="me"
+            >
+              <img src="x.png" class="card-icon inv" alt="" loading="lazy" />
+              <span class="card-name">x</span>
+            </a>
+          </li>
+          <li>
+            <a
+              class="card"
+              href="https://www.instagram.com/caarlos0/"
+              target="_blank"
+              rel="me"
+            >
+              <img
+                src="instagram.png"
+                class="card-icon"
+                alt=""
+                loading="lazy"
+              />
+              <span class="card-name">instagram</span>
+            </a>
+          </li>
+          <li>
+            <a
+              class="card"
+              href="https://www.linkedin.com/in/caarlos0/"
+              target="_blank"
+              rel="me"
+            >
+              <img
+                src="linkedin.png"
+                class="card-icon"
+                alt=""
+                loading="lazy"
+              />
+              <span class="card-name">linkedin</span>
+            </a>
+          </li>
+          <li>
+            <a
+              class="card"
+              href="https://www.goodreads.com/user/show/51005066-carlos-becker"
+              target="_blank"
+              rel="me"
+            >
+              <img
+                src="goodreads.ico"
+                class="card-icon"
+                alt=""
+                loading="lazy"
+              />
+              <span class="card-name">goodreads</span>
+            </a>
+          </li>
+          <li>
+            <a
+              class="card"
+              href="https://steamcommunity.com/id/caarlos0/"
+              target="_blank"
+              rel="me"
+            >
+              <img
+                src="steam.png"
+                class="card-icon inv"
+                alt=""
+                loading="lazy"
+              />
+              <span class="card-name">steam</span>
+            </a>
+          </li>
+          <li>
+            <a
+              class="card"
+              href="https://hevy.com/user/caarlos0"
+              target="_blank"
+              rel="me"
+            >
+              <img src="hevy.ico" class="card-icon" alt="" loading="lazy" />
+              <span class="card-name">hevy</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
     </main>
-
-    <footer class="footer">
-      <div class="construction" aria-hidden="true"></div>
-      <p>
-        🚧 under construction since 2004 🚧 · © caarlos0space™ · made w/ 💖
-        &amp; way 2 much css
-      </p>
-    </footer>
-
-    <script>
-      (function () {
-        // hit counter: fake base + a real visit count in localStorage
-        try {
-          var n = (parseInt(localStorage.getItem("hits") || "0", 10) || 0) + 1;
-          localStorage.setItem("hits", String(n));
-          document.getElementById("counter").textContent = String(
-            1337041 + n
-          ).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        } catch (e) {}
-
-        // sparkle cursor trail
-        if (
-          window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
-          window.matchMedia("(hover: none)").matches
-        )
-          return;
-        var emoji = ["✨", "⭐", "💖", "🌟", "💫"];
-        var last = 0;
-        document.addEventListener("mousemove", function (e) {
-          var now = Date.now();
-          if (now - last < 50) return;
-          last = now;
-          var s = document.createElement("span");
-          s.className = "spark";
-          s.textContent = emoji[(Math.random() * emoji.length) | 0];
-          s.style.left = e.clientX + "px";
-          s.style.top = e.clientY + "px";
-          document.body.appendChild(s);
-          s.addEventListener("animationend", function () {
-            s.remove();
-          });
-        });
-      })();
-    </script>
   </body>
 </html>

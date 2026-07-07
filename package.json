@@ -2,12 +2,13 @@
   "devDependencies": {
     "@tailwindcss/cli": "4.1",
     "concurrently": "9",
+    "onchange": "7",
     "serve": "14",
     "tailwindcss": "4.1"
   },
   "scripts": {
     "serve": "serve ./dist -l 8000",
-    "dev": "pnpm build && concurrently -k -n css,serve \"tailwindcss -i ./src/input.css -o ./dist/output.css --watch\" \"serve ./dist -l 8000\"",
-    "build": "mkdir dist; rm -rf dist/*; cp src/* dist/; rm dist/input.css; tailwindcss -i ./src/input.css -o ./dist/output.css --minify"
+    "dev": "pnpm build && concurrently -k -n build,serve \"onchange -d 100 'src/**/*' -- pnpm build\" \"serve ./dist -l 8000\"",
+    "build": "mkdir -p dist; rm -rf dist/*; cp src/* dist/; rm dist/input.css; tailwindcss -i ./src/input.css -o ./dist/output.css --minify"
   }
 }

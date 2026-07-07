@@ -8,7 +8,7 @@ This is a personal linktree-style static website built with plain HTML and Tailw
 # Install dependencies
 pnpm install
 
-# Development - build, watch CSS, and serve on http://localhost:8000
+# Development - rebuild on any src/ change and serve on http://localhost:8000
 pnpm dev
 
 # Build for production (outputs to dist/)
@@ -39,43 +39,40 @@ dist/               # Build output (gitignored)
 
 ## Design
 
-The page is a modern take on a 2004 MySpace profile ("caarlos0space"): a fake
-site nav bar, a scrolling marquee, an animated rainbow WordArt title, ridge-
-bordered panels over a twinkling star background, a profile card with
-mood/online status and a hit counter, a fake "profile song" player with an
-animated equalizer, an "about me" blurb, and the links as a "Top 9" grid of
-tilted neon sticker cards. A sparkle trail follows the cursor (desktop only).
-Everything is CSS/vanilla JS — no extra images, fonts, or audio.
+Super-dark, monochrome, minimal: near-black background with a faint radial
+highlight, centered profile (avatar, name, handle), and the links as a 3-column
+grid of dark cards. Icons are grayscale/dim by default and gain full color on
+hover/focus; cards lift slightly with a subtle glow. Cards fade in with a short
+staggered entrance. Pure HTML/CSS — no JavaScript, no web fonts, no images
+beyond the existing icons.
 
 ## Adding a New Link
 
 1. Add the platform icon to `src/` (PNG or ICO format)
-2. Add a new `<li>` entry to the `.top9` list in `src/index.html`:
+2. Add a new `<li>` entry to the `.grid` list in `src/index.html`:
 
 ```html
-<li style="--tilt: -2deg">
+<li>
   <a class="card" href="https://example.com/profile" target="_blank" rel="me">
-    <span class="card-rank">#N</span>
     <img src="platform-icon.png" class="card-icon" alt="" loading="lazy" />
     <span class="card-name">platform</span>
   </a>
 </li>
 ```
 
-3. Pick a `--tilt` between -2.5deg and 2.5deg (vary it from the neighbors so
-   the grid looks hand-placed) and keep `card-rank` numbers sequential
+3. If the entrance stagger should cover it, extend the
+   `.grid li:nth-child(N)` animation-delay list in `input.css`
 
 ## CSS Conventions
 
 - **Tailwind CSS v4** with `@apply` directives for component classes
-- **Custom theme** (Y2K neon palette: pink/cyan/purple/lime + Verdana body,
-  Comic Sans accents) defined in the `@theme` block in `input.css`
-- **Icons**: add the `inv` class to dark icons that need `invert()` to be
-  visible on the dark card background (e.g. github, x, steam)
-- **Panels**: `.panel` + `.panel-title` + `.panel-body` is the building block
-  for any new box
-- **Reduced motion**: all animations (marquee, rainbow title, equalizer,
-  blinking, background, sparkle trail) are disabled via `prefers-reduced-motion`
+- **Custom theme** (grayscale palette: page/card/edge/fg/dim) defined in the
+  `@theme` block in `input.css`
+- **Icons**: grayscale/dim by default, full color on hover/focus. Add the
+  `inv` class to dark icons that need `invert()` to be visible on the dark
+  background (e.g. github, x, steam)
+- **Reduced motion**: entrance animation and transitions are disabled via
+  `prefers-reduced-motion`
 
 ## HTML Patterns
 
@@ -83,13 +80,10 @@ Everything is CSS/vanilla JS — no extra images, fonts, or audio.
 - External favicons can be referenced directly (e.g., `https://carlosbecker.com/favicon.ico`)
 - Local icons use relative paths (e.g., `github.png` or `/github.png`)
 - Comments use HTML comment syntax to temporarily disable links
-- Link names are lowercase; the deliberate typos/leetspeak in marquee and
-  status text are part of the aesthetic — don't "fix" them
-- The hit counter is a joke: a fixed base number plus a real per-browser visit
-  count from localStorage
+- Link names are lowercase
 
 ## Gotchas
 
-- **No hot reload for HTML**: `dev` only watches CSS. HTML/icon edits need a `dev` restart (or `pnpm build`) to re-copy them into `dist/`; refresh the browser manually.
+- **No live reload**: `dev` watches all of `src/` and rebuilds `dist/` on any change (HTML, CSS, icons), but the browser does **not** auto-refresh — reload the page manually to see changes.
 - **dist/ is gitignored**: Build output is not committed; run `pnpm build` before deploying
-- **Local server uses `serve`**: `pnpm dev` (build + CSS watch + serve) and `pnpm serve` (serve only) both serve `dist/` on http://localhost:8000 via the Node `serve` package — no Python needed
+- **Local server uses `serve`**: `pnpm dev` (watch `src/` + rebuild + serve) and `pnpm serve` (serve only) both serve `dist/` on http://localhost:8000 via the Node `serve` package — no Python needed
